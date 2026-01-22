@@ -3,7 +3,7 @@ export default function App() {
     <div className="font-sans text-gray-900 bg-gray-50">
       {/* Navbar */}
       <nav className="flex justify-between items-center px-6 py-4 bg-white shadow">
-        <h1 className="text-2xl font-bold">Techbium</h1>
+        <h1 className="text-2xl font-bold">☄️</h1>
         <div className="space-x-6">
           <a href="#skills" className="hover:text-blue-500">Skills</a>
           <a href="#projects" className="hover:text-blue-500">Projects</a>
@@ -12,15 +12,37 @@ export default function App() {
       </nav>
 
       {/* Hero */}
-      <section className="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-blue-100 to-purple-100">
-        <h2 className="text-5xl font-extrabold mb-4">Hi, I’m Olatunji Rauf 👋</h2>
-        <p className="text-lg max-w-xl mb-6">
-          A <strong>Backend</strong> developer focused on building fast, secure, and user-friendly apps using Node.js, SQL, and React.
-        </p>
-        <a href="#projects" className="px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700">
-          View My Work
-        </a>
-      </section>
+      <section className="min-h-screen flex items-center justify-center px-6 pt-24">
+      <div className="max-w-4xl">
+        <div className="space-y-6">
+          <div className="inline-block">
+            <span className="text-sm text-accent">Hello, I&apos;m</span>
+          </div>
+          <h1 className="text-5xl md:text-7xl font-bold text-foreground leading-tight">Olatunji Rauf</h1>
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl leading-relaxed">
+            Backend Developer focused on building reliable APIs and database-driven applications
+          </p>
+          <p className="text-base text-muted-foreground max-w-2xl leading-relaxed">
+            I'm focused on building reliable server-side applications. Experienced with REST APIs, PostgreSQL, and backend frameworks, with a strong interest in clean architecture, system design, and scalable backend engineering.
+          </p>
+          <div className="flex gap-4 pt-4">
+            <a
+              href="#projects"
+              className="px-6 py-3 bg-blue-600 text-primary-foreground rounded-lg hover:opacity-90 transition-opacity font-medium text-white"
+            >
+              View My Work
+            </a>
+            <a
+              href="#contact"
+              className="px-6 py-3 border border-primary text-primary rounded-lg hover:bg-primary/10 transition-colors font-medium"
+            >
+              Get in Touch
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
 
       {/* Skills */}
       <section id="skills" className="py-20 px-6">
