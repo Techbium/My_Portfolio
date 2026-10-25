@@ -1,0 +1,9 @@
+
+Bium Audio AI: https://techbium-audio-note-taker.vercel.app/
+	Description:Turn audio recordings into clear, structured, and detailed notes. This application transforms recordings from lectures, meetings, seminars, and other spoken sessions into written content tailored to your preferred style. Whether you need comprehensive notes, concise summaries, or organized key points, it helps you turn lengthy recordings into information that's easier to review, understand, and revisit.
+	
+	
+	
+	
+clothing_Brand: https://clothingbrand-weld.vercel.app/
+	Description: A modern, stylish website designed to showcase a clothing brand's identity and collections. With a clean layout, visually engaging product presentation, and intuitive navigation, the website provides customers with a seamless browsing experience while highlighting the brand's unique style and aesthetic.
