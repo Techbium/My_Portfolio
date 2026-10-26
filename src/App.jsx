@@ -2,18 +2,60 @@ import { useEffect, useRef, useState } from 'react'
 import javascriptLogo from './assets/js.png'
 import reactLogo from './assets/react.png'
 import nodeLogo from './assets/node.png'
+import techbiumLogo from '../LOGO.png'
 import { projects } from './data/projects.js'
 import './App.css'
 
 const skillGroups = [
-  { title: 'Languages', items: ['JavaScript', 'TypeScript', 'Python'] },
-  { title: 'Frontend', items: ['React'] },
+  { title: 'Languages', items: ['JavaScript', 'TypeScript', 'Python', 'Solidity'] },
+  { title: 'Frontend', items: ['React', 'HTML', 'CSS', 'Tailwind'] },
   { title: 'Backend', items: ['Node.js', 'Django', 'REST APIs'] },
-  { title: 'Databases', items: ['PostgreSQL', 'MySQL', 'Prisma'] },
-  { title: 'Tools & practices', items: ['Git', 'Linux', 'Debugging', 'Testing fundamentals', 'Basic CI/CD'] },
-  { title: 'Learning & exposure', items: ['Docker', 'AWS', 'Microservices', 'AI/ML concepts', 'Web3 fundamentals', 'Java'] },
+  { title: 'Databases', items: ['PostgreSQL', 'MySQL', 'MongoDB'] },
+  { title: 'Tools & practices', items: ['Git', 'Linux', 'Prisma ORM', 'Drizzle ORM', 'Debugging', 'Testing fundamentals', 'Basic CI/CD'] },
+  { title: 'Learning & exposure', items: ['Docker', 'AWS', 'Microservices', 'AI/ML concepts', 'Web3 fundamentals', 'Java', 'Golang'] },
 ]
 const skillLogos = { JavaScript: javascriptLogo, React: reactLogo, 'Node.js': nodeLogo }
+
+const experience = [
+  {
+    role: 'Software Developer',
+    organization: 'Superverge tech',
+    period: '2026 — PRESENT',
+    summary: 'Building websites for technology events and teaching programming fundamentals to new learners.',
+    responsibilities: [
+      'Worked on multiple websites for technology events.',
+      'Taught about five students HTML, CSS, JavaScript, React fundamentals, and how the web works.',
+    ],
+  },
+  {
+    role: 'Backend Developer',
+    organization: 'The Relevant Woman',
+    period: '2026',
+    summary: 'Built the website backend and connected its API, database, and email service.',
+    responsibilities: [
+      'Built a backend for The Relevant Woman website.',
+      'Integrated a REST API with the Next.js application.',
+      'Connected Supabase for the database and Brevo for email.',
+    ],
+  },
+  {
+    role: 'Software Engineer',
+    organization: 'Freelance / Personal Projects / Open Source Contributions',
+    period: '2023 — 2025',
+    summary: 'Built and deployed full-stack applications, REST APIs, and database-backed features with JavaScript technologies.',
+    responsibilities: [
+      'Built and deployed web applications using React, Node.js, and Django.',
+      'Designed REST APIs for authentication, routing, and data persistence; implemented CRUD operations and protected routes.',
+      'Developed responsive interfaces with attention to usability and performance.',
+      'Modeled and queried relational databases with MySQL and PostgreSQL.',
+      'Used Git and structured development workflows; continued improving debugging, testing, and code structure.',
+      'Deployed applications to cloud environments and managed basic server configuration.',
+      'Contributed to Engipay, a Web3-based fintech solution.',
+    ],
+    project: 'Zocial is described in the CV as a web application for social media influencers and managers to share work across multiple platforms from a single post. Project work also includes frontend/backend separation, authentication and protected routes, CRUD APIs, database schema design, and backend business logic.',
+    technologies: 'JavaScript · React · Node.js · Django · MySQL / PostgreSQL · Git',
+  },
+]
 
 function Gallery({ project }) {
   const [active, setActive] = useState(0)
@@ -71,7 +113,7 @@ function App() {
   return <>
     <header className="site-header">
       <nav className="nav-wrap" aria-label="Main navigation">
-        <a className="brand" href="#home" onClick={closeMenu}><span className="brand-mark">T</span><span>Olatunji Rauf</span></a>
+        <a className="brand" href="#home" onClick={closeMenu}><img className="brand-logo" src={techbiumLogo} alt="" /><span>Olayiwola Olatunji Rauf</span></a>
         <button className="menu-toggle" type="button" aria-expanded={menuOpen} aria-controls="nav-links" onClick={() => setMenuOpen(open => !open)}>{menuOpen ? 'Close' : 'Menu'}</button>
         <div id="nav-links" className={`nav-links${menuOpen ? ' nav-links--open' : ''}`}>
           {[['About', '#about'], ['Projects', '#projects'], ['Tech stack', '#skills'], ['Experience', '#experience'], ['Contact', '#contact']].map(([label, href]) => <a key={href} href={href} onClick={closeMenu}>{label}</a>)}
@@ -84,7 +126,7 @@ function App() {
         <div className="hero-copy">
           <p className="eyebrow"><span className="status-dot" /> SOFTWARE ENGINEER · LAGOS, NIGERIA</p>
           <h1>Building reliable backend systems and practical software.</h1>
-          <p className="hero-summary">I build web applications, REST APIs, and database-backed systems with JavaScript and Python technologies. I’m growing toward backend engineering, system design, and dependable infrastructure.</p>
+          <p className="hero-summary">I build web applications, REST APIs, and database-backed systems with TypeScript, JavaScript, and modern frameworks. I’m growing toward backend engineering, system design, and dependable infrastructure.</p>
           <div className="hero-actions"><a className="button button-primary" href="#projects">Explore projects <span>↘</span></a><a className="button button-secondary" href="#contact">Contact me</a><a className="text-link hero-github" href="https://github.com/techbium" target="_blank" rel="noreferrer">GitHub ↗</a></div>
         </div>
         <aside className="hero-note" aria-label="Engineering focus">
@@ -99,7 +141,7 @@ function App() {
 
       <section className="section page-width about-section" id="about">
         <div className="section-heading"><p className="eyebrow">01 / ABOUT</p><h2>Practical software,<br />built with care.</h2></div>
-        <div className="about-copy"><p>I’m a junior software engineer with hands-on experience building full-stack web applications, implementing APIs, and working with relational databases. My work spans personal and freelance projects, from responsive interfaces to backend services.</p><p>I care about solving the right problem, shaping clear data models, and keeping code understandable as an application grows. I’m continuing to develop my skills in system design, infrastructure, debugging, and testing.</p><div className="about-facts"><span><b>Based in</b>Lagos, Nigeria</span><span><b>Education</b>Lagos State University</span></div></div>
+        <div className="about-copy"><p>I build full-stack web applications with TypeScript, JavaScript, and modern frameworks, with a strong foundation in backend development, REST API design, and database management. My freelance and personal projects span responsive interfaces, backend services, and application deployment.</p><p>I focus on solving problems with maintainable code and developing production-ready applications. I adapt quickly to new technologies and am growing my knowledge of cloud infrastructure, scalable system design, distributed systems, AI integration, and modern DevOps practices.</p><div className="about-facts"><span><b>Based in</b>Lagos, Nigeria</span><span><b>Education</b>Lagos State University</span><span><b>Language</b>English</span></div></div>
       </section>
 
       <section className="projects-section" id="projects"><div className="page-width">
@@ -112,11 +154,11 @@ function App() {
 
       <section className="section page-width skills-section" id="skills"><div className="section-heading"><p className="eyebrow">03 / TECH STACK</p><h2>Tools for building<br />end to end.</h2><p className="heading-detail">A growing toolkit, grounded in practical application.</p></div><div className="skills-grid">{skillGroups.map(group => <div className="skill-group" key={group.title}><h3>{group.title}</h3><div className="skill-list">{group.items.map(item => <span className="skill-chip" key={item}>{skillLogos[item] && <img className="skill-logo" src={skillLogos[item]} alt="" />}{item}</span>)}</div></div>)}</div></section>
 
-      <section className="experience-section" id="experience"><div className="page-width experience-layout"><div className="section-heading"><p className="eyebrow">04 / EXPERIENCE</p><h2>Learning by<br />building.</h2></div><div className="experience-entry"><div className="experience-top"><div><h3>Junior Software Engineer</h3><p>Freelance / Personal Projects</p></div><span>2024 — PRESENT</span></div><p className="experience-intro">Building and deploying full-stack applications while developing a solid backend engineering practice.</p><ul><li>Build web applications with React, Node.js, and Django.</li><li>Design REST APIs with authentication, routing, and CRUD operations.</li><li>Model and query relational data with MySQL and PostgreSQL.</li><li>Use Git workflows, debug and test applications, and deploy to cloud environments with basic server configuration.</li></ul><div className="experience-tools">JavaScript <i>·</i> React <i>·</i> Node.js <i>·</i> Django <i>·</i> MySQL / PostgreSQL <i>·</i> Git</div></div></div></section>
+      <section className="experience-section" id="experience"><div className="page-width experience-layout"><div className="section-heading"><p className="eyebrow">04 / EXPERIENCE</p><h2>Building,<br />integrating,<br />and teaching.</h2></div><div className="experience-list">{experience.map((entry) => <article className="experience-entry" key={`${entry.organization}-${entry.period}`}><div className="experience-top"><div><h3>{entry.role}</h3><p>{entry.organization}</p></div><span>{entry.period}</span></div><p className="experience-intro">{entry.summary}</p><details className="experience-details"><summary>{entry.project ? 'Responsibilities and project experience' : 'Responsibilities'} <span>+</span></summary><div className="experience-detail-content"><ul>{entry.responsibilities.map(item => <li key={item}>{item}</li>)}</ul>{entry.project && <p><b>Project experience:</b> {entry.project}</p>}</div></details>{entry.technologies && <div className="experience-tools">{entry.technologies}</div>}</article>)}</div></div></section>
 
-      <section className="contact-section" id="contact"><div className="page-width contact-inner"><p className="eyebrow">05 / CONTACT</p><h2>Have something<br />good to build?</h2><p>I’m open to connecting with engineering teams, clients, and collaborators.</p><a className="button button-primary" href="mailto:raufolatunji2@gmail.com">Send me an email <span>↗</span></a><div className="contact-links"><a href="https://www.linkedin.com/in/olatunji-rauf-6960093b5/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/techbium" target="_blank" rel="noreferrer">GitHub ↗</a><span>Lagos, Nigeria</span></div></div></section>
+      <section className="contact-section" id="contact"><div className="page-width contact-inner"><p className="eyebrow">05 / CONTACT</p><h2>Have something<br />good to build?</h2><p>I’m open to connecting with engineering teams, clients, and collaborators.</p><a className="button button-primary" href="mailto:raufolatunji2@gmail.com">Send me an email <span>↗</span></a><div className="contact-links"><a href="https://www.linkedin.com/in/olatunji-rauf-6960093b5/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://x.com/tech_bium" target="_blank" rel="noreferrer">X ↗</a><a href="https://github.com/techbium" target="_blank" rel="noreferrer">GitHub ↗</a><span>Lagos, Nigeria</span></div></div></section>
     </main>
-    <footer className="site-footer"><div className="page-width footer-inner"><a className="brand" href="#home"><span className="brand-mark">T</span><span>Olatunji Rauf</span></a><span>© {new Date().getFullYear()} Olatunji Rauf. Built with care.</span><a href="#home">Back to top ↑</a></div></footer>
+    <footer className="site-footer"><div className="page-width footer-inner"><a className="brand" href="#home"><img className="brand-logo" src={techbiumLogo} alt="" /><span>Olayiwola Olatunji Rauf</span></a><span>© {new Date().getFullYear()} Olayiwola Olatunji Rauf. Built with care.</span><a href="#home">Back to top ↑</a></div></footer>
   </>
 }
 
